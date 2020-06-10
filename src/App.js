@@ -8,7 +8,7 @@ import ColorBox from "./components/ColorBox";
 function App() {
 	let count = useSelector((state) => state.count);
 	let dispatch = useDispatch();
-	let [backgroundColor, setBackgroundColor] = useState("");
+// 	let [backgroundColor, setBackgroundColor] = useState("");
 
 	const increaseNum = () => {
 		dispatch({ type: "Increment" });
@@ -19,7 +19,7 @@ function App() {
 			<h1>Counter App</h1>
 			<input
 				type="text"
-				onChange={(e) => setBackgroundColor(e.target.value)}
+				onChange={(e) =>dispatch({type:"TotalColor",hugo:e.target.value}) }
 			></input>
 
 			<h2>{count}</h2>
